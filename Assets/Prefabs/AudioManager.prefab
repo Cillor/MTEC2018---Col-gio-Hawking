@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1527763564691430}
+  m_IsPrefabAsset: 1
+--- !u!1 &1527763564691430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4745615132526456}
+  - component: {fileID: 114688599787313520}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4745615132526456
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527763564691430}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 669.97974, y: 593.24976, z: 57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114688599787313520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527763564691430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba26bf8c4a437e41973b5c67b791119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 0}
+  sounds:
+  - name: MusicMenu
+    clip: {fileID: 8300000, guid: 175d1d49555fc4743915e71e29b3d605, type: 3}
+    volume: 0.02
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: OpeningBook
+    clip: {fileID: 8300000, guid: 4eb480cb8eee8d64082c259d1b967cc8, type: 3}
+    volume: 0.1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    playOnAwake: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Writing
+    clip: {fileID: 8300000, guid: c7b342b41cadf0d42a5e0c6946ee53fd, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    playOnAwake: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PeopleTalking
+    clip: {fileID: 8300000, guid: cc9f4a45bb44fb34e966b3ccf8db0a50, type: 3}
+    volume: 0.1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Running
+    clip: {fileID: 8300000, guid: 26004085fa9dd2e40b1c70c660d98689, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Walking
+    clip: {fileID: 8300000, guid: 4da87941bcccdee428be059d0e2ffefc, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 3a99043217e509149bec0b17b79f31a6, type: 3}
+    volume: 0.004
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BallKick
+    clip: {fileID: 8300000, guid: a41fd7d43a2d02f4580477130560faab, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: DeathMusic
+    clip: {fileID: 8300000, guid: db3de20032583744ea84fbfc26048ccb, type: 3}
+    volume: 0.05
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: QuizMusic
+    clip: {fileID: 8300000, guid: 5f84eb4d930b4f049ad83182ed1106bb, type: 3}
+    volume: 0.004
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    playOnAwake: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
