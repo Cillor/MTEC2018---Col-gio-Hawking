@@ -6,7 +6,8 @@ using UnityEngine.UI;
 using CodeMonkey.Utils;
 using System;
 
-public class Window_QuestPointer : MonoBehaviour {
+public class Window_QuestPointer : MonoBehaviour
+{
 
     [SerializeField] private Camera uiCamera;
     [SerializeField] private Sprite arrowSprite;
@@ -14,7 +15,8 @@ public class Window_QuestPointer : MonoBehaviour {
 
     private List<QuestPointer> questPointerList;
 
-    private void Awake() {
+    private void Awake()
+    {
         questPointerList = new List<QuestPointer>();
     }
 
@@ -31,7 +33,8 @@ public class Window_QuestPointer : MonoBehaviour {
         }
     }
 
-    public QuestPointer CreatePointer(Vector3 targetPosition) {
+    public QuestPointer CreatePointer(Vector3 targetPosition)
+    {
         GameObject pointerGameObject = Instantiate(transform.Find("pointerTemplate").gameObject);
         pointerGameObject.SetActive(true);
         pointerGameObject.transform.SetParent(transform, false);
@@ -40,12 +43,14 @@ public class Window_QuestPointer : MonoBehaviour {
         return questPointer;
     }
 
-    public void DestroyPointer(QuestPointer questPointer) {
+    public void DestroyPointer(QuestPointer questPointer)
+    {
         questPointerList.Remove(questPointer);
         questPointer.DestroySelf();
     }
 
-    public class QuestPointer {
+    public class QuestPointer
+    {
 
         private Vector3 targetPosition;
         private GameObject pointerGameObject;
@@ -55,24 +60,27 @@ public class Window_QuestPointer : MonoBehaviour {
         private RectTransform pointerRectTransform;
         private SpriteRenderer pointerImage;
 
-        public QuestPointer(Vector3 targetPosition, GameObject pointerGameObject, Camera uiCamera, Sprite arrowSprite, Sprite crossSprite) {
+        public QuestPointer(Vector3 targetPosition, GameObject pointerGameObject, Camera uiCamera, Sprite arrowSprite, Sprite crossSprite)
+        {
             this.targetPosition = targetPosition;
             this.pointerGameObject = pointerGameObject;
             this.uiCamera = uiCamera;
             this.arrowSprite = arrowSprite;
             this.crossSprite = crossSprite;
-            
+
             pointerRectTransform = pointerGameObject.GetComponent<RectTransform>();
             pointerImage = pointerGameObject.GetComponent<SpriteRenderer>();
         }
 
-        public void Update() {
+        public void Update()
+        {
             float borderSizeHeight = 50f;
             float borderSizeWidth = 150f;
             Vector3 targetPositionScreenPoint = Camera.main.WorldToScreenPoint(targetPosition);
             bool isOffScreen = targetPositionScreenPoint.x <= borderSizeWidth || targetPositionScreenPoint.x >= Screen.width - borderSizeWidth || targetPositionScreenPoint.y <= borderSizeHeight || targetPositionScreenPoint.y >= Screen.height - borderSizeHeight;
 
-            if (isOffScreen) {
+            if (isOffScreen)
+            {
                 RotatePointerTowardsTargetPosition();
 
                 pointerImage.sprite = arrowSprite;
@@ -83,7 +91,9 @@ public class Window_QuestPointer : MonoBehaviour {
                 Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(cappedTargetScreenPosition);
                 pointerRectTransform.position = pointerWorldPosition;
                 pointerRectTransform.localPosition = new Vector3(pointerRectTransform.localPosition.x, pointerRectTransform.localPosition.y, 0f);
-            } else {
+            }
+            else
+            {
                 pointerImage.sprite = crossSprite;
                 Vector3 pointerWorldPosition = uiCamera.ScreenToWorldPoint(targetPositionScreenPoint);
                 pointerRectTransform.position = pointerWorldPosition;
@@ -93,7 +103,8 @@ public class Window_QuestPointer : MonoBehaviour {
             }
         }
 
-        private void RotatePointerTowardsTargetPosition() {
+        private void RotatePointerTowardsTargetPosition()
+        {
             Vector3 toPosition = targetPosition;
             Vector3 fromPosition = Camera.main.transform.position;
             fromPosition.z = 0f;
@@ -102,7 +113,8 @@ public class Window_QuestPointer : MonoBehaviour {
             pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle);
         }
 
-        public void DestroySelf() {
+        public void DestroySelf()
+        {
             Destroy(pointerGameObject);
         }
 

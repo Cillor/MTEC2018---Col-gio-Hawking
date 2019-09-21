@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
-public class GameHandler : MonoBehaviour {
-    [SerializeField] private float distance = 200f;
+public class GameHandler : MonoBehaviour
+{
+    [SerializeField] private float distance = 600f;
 
     public ClockManager clock;
 
@@ -14,7 +15,8 @@ public class GameHandler : MonoBehaviour {
     public void CreatePointer(Transform targets, int questNumber)
     {
         Window_QuestPointer.QuestPointer questPointers = windowQuestPointer.CreatePointer(new Vector3(targets.position.x, targets.position.y, targets.position.z));
-        FunctionUpdater.Create(() => {
+        FunctionUpdater.Create(() =>
+        {
             #region
             float xDistancia = Camera.main.transform.position.x - targets.position.x;
             float yDistancia = Camera.main.transform.position.y - targets.position.y;
@@ -36,14 +38,15 @@ public class GameHandler : MonoBehaviour {
             else
             {
                 return false;
-            }           
+            }
         });
     }
 
     public void StartPointerCreation(Transform targets, int day)
     {
         Window_QuestPointer.QuestPointer questPointers = windowQuestPointer.CreatePointer(new Vector3(targets.position.x, targets.position.y, targets.position.z));
-        FunctionUpdater.Create(() => {
+        FunctionUpdater.Create(() =>
+        {
             #region
             float xDistancia = Camera.main.transform.position.x - targets.position.x;
             float yDistancia = Camera.main.transform.position.y - targets.position.y;
