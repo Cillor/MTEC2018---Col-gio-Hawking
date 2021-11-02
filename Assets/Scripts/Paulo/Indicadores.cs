@@ -118,17 +118,11 @@ public class Indicadores : MonoBehaviour
         do
         {
             if (-Mathf.PI < healthAmount)
-            {
-                healthAmount -= 0.003f * foodSubtractionModifier * socialSubtractionModifier; //Função linear
-            }
+                healthAmount -= 0.003f * foodSubtractionModifier * socialSubtractionModifier; //Função linear                
             if (-Mathf.PI < socialAmount)
-            {
                 socialAmount -= 0.002f * healthSubtractionModifier * foodSubtractionModifier; //Função linear
-            }
             if (-Mathf.PI < foodAmount)
-            {
                 foodAmount -= 0.003f * healthSubtractionModifier * socialSubtractionModifier; //Função linear
-            }
             yield return new WaitForSeconds(1f);
         } while (true);
     }
