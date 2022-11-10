@@ -6,4 +6,4 @@ O projeto Colégio Hawking foi criado com o propósito de demonstrar para as pes
 <img height="400em" src="https://i.imgur.com/vmkOO49.png"/>
 </div>  
 
-[![Colegio Hawking Gameplay](https://i.imgur.com/UigJgqF.png)](https://www.youtube.com/watch?v=1J_oNVu5lyM)
+[![Colegio Hawking Gameplay](https://i.imgur.com/hpv4HRz.png)](https://www.youtube.com/watch?v=1J_oNVu5lyM)
